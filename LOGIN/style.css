@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.336);
+}
+
+.navbar-expand-lg{
+    height: 10%;
+    width: 100%;
+    background-color: rgba(49, 49, 238, 0.281);
+}
+
+.navbar .container-fluid .home{
+    cursor: pointer;
+}
+
+.content{
+    background-color: rgba(91, 91, 202, 0.199);
+    height: 90%;
+}

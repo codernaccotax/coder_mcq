@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(19, 93, 190, 0.336);
+}
+
+.navbar{
+    background-color: rgba(19, 93, 190, 0.199);
+}
+
+/*This Puts The Navbar's-Icon In Center*/
+/* .navbar-toggler {
+    margin: auto;
+    display: block;
+} */
+
+
+.navbar-toggler-icon {
+    filter: invert(1%);
+    /* color: red !important; */
+}
+
+.offcanvas {
+    background-color: #3e58ee88; /* Dark Grey Background */
+    color: #333; /* Text Color */
+}
+
+.offcanvas-body .navbar-nav .nav-item:hover{
+    transition: .5s ease;
+    background-color: rgba(0, 12, 10, 0.2);
+    color: rgb(0, 255, 13) !important;
+}
