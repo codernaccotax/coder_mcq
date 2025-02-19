@@ -86,18 +86,19 @@
                     success: function(response) {
                         let answer = JSON.parse(response);                        
                         if (answer.success != true) {
+                            alert(`Please Check`);
                         } else {
+                            alert(`Ok`);
                             console.log(answer);
                             if (answer.user_type_id == 1) {
                                 window.location.href = "admin.php";
 
                             } else if (answer.user_type_id == 2) {
-                                window.location.href = "instructor";
+                                window.location.href = "./instructor";
                             } else if (answer.user_type_id == 3) {
                                 window.location.href = "student.php";
                             }
                         }
-                        console.log(answer);
                     }
                 });
             });
