@@ -1,3 +1,7 @@
+<!-- start a session -->
+<?php 
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -97,9 +101,24 @@
                             console.log(answer);
                             if (answer.user_type_id == 1) {
                                 window.location.href = "admin.php";
-
                             } else if (answer.user_type_id == 2) {
-                                window.location.href = "../instructor";
+                                alert("Id Is: " + answer.id);
+                            // Session set karne ke liye AJAX request bhejo
+                                fetch('../set_session.php', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({ userId: answer.id }) // ID bhejna
+                                }).then(response => response.json())
+                                .then(data => {
+                                    if (data.success) {
+                                        window.location.href = "../instructor"; // Redirect jab session set ho jaye
+                                    } else {
+                                        alert("Session set failed!");
+                                    }
+                                }).catch(error => console.error('Error:', error));
+
                             } else if (answer.user_type_id == 3) {
                                 window.location.href = "student.php";
                             }

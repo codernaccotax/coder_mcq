@@ -25,6 +25,7 @@ body{
 }
 
 .offcanvas {
+    height: 50vh !important;
     background-color: #3e58ee88; /* Dark Grey Background */
     color: #333; /* Text Color */
 }
@@ -33,4 +34,8 @@ body{
     transition: .5s ease;
     background-color: rgba(0, 12, 10, 0.2);
     color: rgb(0, 255, 13) !important;
+}
+
+.btn-close{
+    color: red !important;
 }
