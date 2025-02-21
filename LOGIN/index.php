@@ -1,7 +1,3 @@
-<!-- start a session -->
-<?php 
-    session_start();
-?>
 <!doctype html>
 <html lang="en">
 
@@ -11,72 +7,52 @@
     <title>Bootstrap demo</title>
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            height: 100vh;
-            width: 100vw;
-            background-color: rgba(0, 0, 255, 0.5);
-        }
-
-        nav {
-            background-color: #343a40;
-            position: absolute;
-            top: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        .login-part {
-            height: 100%;
-            width: 100%;
-            background-color: rgba(255,255, 255, 0.5);
-            /* position: absolute; */
-           display:none;
-
-        }
-    </style>
 </head>
 
 <body>
+    
     <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
             <div class="home col-10">HOME</div>
             <div class="login col-1 "><button onclick="openLoginPart()" class="btn btn-success">Login</a></button></div>
         </div>
     </nav>
-    <div class="login-part">
-        <form id="login-form">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="text" class="form-control" id="user-id" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <div class="container-fluid main-container">
+        <div class="content container-fluid">
+            <div class="login-part">
+                <header><span onclick="openLoginPart()" >x</span></header>
+                <div class="form-section">
+                    <form id="login-form">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="text" class="form-control" id="user-id" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Your Data Will Always Secure,</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
     </div>
-    <div class="content"></div>
 
-
-
+    <!-- For Sending Id To Next Page -->
+    <form id="formForUserId" method="POST">
+        <input type="hidden" name="userId" id="forUserId">
+    </form>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         function openLoginPart(){
-            $('.login-part').toggle();
+            $('.login-part').fadeToggle(800);
         }
-        
+
         $('.home').on("click",function(){
             window.location.href = "../index.php";
         });
@@ -98,29 +74,24 @@
                         if (answer.success != true) {
                             alert(`Please Check Email OR Password,`);
                         } else {
-                            console.log(answer);
                             if (answer.user_type_id == 1) {
-                                window.location.href = "admin.php";
+                                // alert("Instructor ID being sent:"+ check);
+                                $('#forUserId').val(answer.id);
+                                $('#formForUserId').prop('action', '../ADMIN/index.php');
+                                $('#formForUserId').submit();
+                                let check=$('#formForUserId').val();
                             } else if (answer.user_type_id == 2) {
-                                alert("Id Is: " + answer.id);
-                            // Session set karne ke liye AJAX request bhejo
-                                fetch('../set_session.php', {
-                                    method: 'POST',
-                                    headers: {
-                                        'Content-Type': 'application/json'
-                                    },
-                                    body: JSON.stringify({ userId: answer.id }) // ID bhejna
-                                }).then(response => response.json())
-                                .then(data => {
-                                    if (data.success) {
-                                        window.location.href = "../instructor"; // Redirect jab session set ho jaye
-                                    } else {
-                                        alert("Session set failed!");
-                                    }
-                                }).catch(error => console.error('Error:', error));
-
+                                // alert("Instructor ID being sent:"+ check);
+                                $('#forUserId').val(answer.id);
+                                $('#formForUserId').prop('action', '../INSTRUCTOR/index.php');
+                                $('#formForUserId').submit();
+                                let check=$('#formForUserId').val();
                             } else if (answer.user_type_id == 3) {
-                                window.location.href = "student.php";
+                                // alert("Instructor ID being sent:"+ check);
+                                $('#forUserId').val(answer.id);
+                                $('#formForUserId').prop('action', '../STUDENT/index.php');
+                                $('#formForUserId').submit();
+                                let check=$('#formForUserId').val();
                             }
                         }
                     }
@@ -129,5 +100,4 @@
         });
     </script>
 </body>
-
 </html>

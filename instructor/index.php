@@ -1,15 +1,26 @@
->
-
 <?php
-session_start();
-  try{
-    // require_once "../config.php";
-    // $stmt = $pdo->prepare('select name from users where id =?');
-    // $stmt->execute($_POST['id']);
-    // $name = $stmt->fetchColumn(0);
-    print_r($_SESSION);
-}catch (PDOException $e) {
-  echo 'Error: ' . $e->getMessage();
+
+try {
+    require_once "../config.php";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['userId'])) {
+            $userId = $_POST['userId'];
+            if ($userId !== false) {
+                $stmt = $pdo->prepare('SELECT name FROM users WHERE id = ?;');
+                $stmt->execute([$userId]);
+                $name = $stmt->fetchColumn();
+            } else {
+                echo "Invalid userId provided.";
+            }
+
+        } else {
+            echo "userId not received.";
+        }
+    } else {
+        echo "This script only handles POST requests.";
+    }
+} catch (PDOException $e) {
+    echo 'Error: ' . $e->getMessage();
 }
 ?>
 
@@ -32,7 +43,7 @@ session_start();
     </button>
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><?php echo $name?></h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><?php echo strtoupper($name)?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
