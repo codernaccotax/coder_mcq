@@ -75,19 +75,16 @@
                             alert(`Please Check Email OR Password,`);
                         } else {
                             if (answer.user_type_id == 1) {
-                                // alert("Instructor ID being sent:"+ check);
                                 $('#forUserId').val(answer.id);
                                 $('#formForUserId').prop('action', '../ADMIN/index.php');
                                 $('#formForUserId').submit();
                                 let check=$('#formForUserId').val();
                             } else if (answer.user_type_id == 2) {
-                                // alert("Instructor ID being sent:"+ check);
                                 $('#forUserId').val(answer.id);
                                 $('#formForUserId').prop('action', '../INSTRUCTOR/index.php');
                                 $('#formForUserId').submit();
                                 let check=$('#formForUserId').val();
                             } else if (answer.user_type_id == 3) {
-                                // alert("Instructor ID being sent:"+ check);
                                 $('#forUserId').val(answer.id);
                                 $('#formForUserId').prop('action', '../STUDENT/index.php');
                                 $('#formForUserId').submit();
