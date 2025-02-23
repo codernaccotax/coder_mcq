@@ -24,6 +24,20 @@ body{
     /* color: red !important; */
 }
 
+.welcome-container {
+    text-align: center;
+}
+.welcome-container h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    /* margin-bottom: 20px; */
+}
+.welcome-container p {
+    font-size: 1em;
+    color: #34495e;
+    /* margin-bottom: 15px; */
+}
+
 .offcanvas {
     height: 50vh !important;
     background-color: #3e58ee88; /* Dark Grey Background */

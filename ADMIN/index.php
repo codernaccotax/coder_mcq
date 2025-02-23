@@ -1,21 +1,21 @@
 <?php
 
 try {
-    require_once "../config.php";
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST['userId'])) {
-            $userId = $_POST['userId'];
-            if ($userId !== false) {
-                $stmt = $pdo->prepare('SELECT name FROM users WHERE id = ?;');
-                $stmt->execute([$userId]);
-                $name = $stmt->fetchColumn();
-            } else {
-                echo "Invalid userId provided.";
-            }
-        } else {
-            echo "userId not received.";
-        }
-        ?>
+  require_once "../config.php";
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['userId'])) {
+      $userId = $_POST['userId'];
+      if ($userId !== false) {
+        $stmt = $pdo->prepare('SELECT name FROM users WHERE id = ?;');
+        $stmt->execute([$userId]);
+        $name = $stmt->fetchColumn();
+      } else {
+      echo "Invalid userId provided.";
+      }
+  } else {
+  echo "userId not received.";
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -44,10 +44,13 @@ try {
             <a class="nav-link active" aria-current="page" href="../CHECK-USERS">Check Users</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../ADD-USERS">Add Users</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="../INSERT_QUESTIONS">Insert Questions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-current="page" href="#"><i>Coming_Soon_More_Features..</i></a>
+            <a class="nav-link disabled" aria-current="page"><i>Coming_Soon_More_Features..</i></a>
           </li>
         </ul>
         <form class="d-flex mt-3" role="search">
@@ -59,7 +62,29 @@ try {
   </div>
 </nav>
 
-<div class="main">Main_Part</div>
+<div class="main">
+<div class="welcome-container">
+        <h1>Welcome, Esteemed ADMIN!</h1>
+        <p>
+            Your journey begins here. As the guardian of this digital realm, you hold the keys to control, manage, and ensure the smooth operation of our entire system.
+        </p>
+        <p>
+            Your expertise and dedication are the driving force behind our success. Your vigilance protects our data, your decisions shape our future, and your commitment inspires us all.
+        </p>
+        <p>
+            Every click, every command you execute is a step towards perfection. You have the power to make a difference, to innovate, and to lead us to new heights.
+        </p>
+        <p>
+            Together, let's make today not just another day, but a milestone in our journey towards excellence. Let's create, improve, and conquer challenges with unwavering determination and unparalleled skill.
+        </p>
+        <p>
+            Thank you for being the cornerstone of our digital world. Let's embark on this journey with passion, purpose, and pride.
+        </p>
+        <p>
+            Welcome, once again, to the heart of our operations.
+        </p>
+    </div>
+</div>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>

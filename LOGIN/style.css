@@ -77,8 +77,13 @@ body {
     flex-direction: column;
     height: 100%;
     width: 70%;
-    background-color: rgba(0, 110, 255, 0.329);
     border-radius: 2%;
+    box-shadow: 
+    10px 10px 30px rgba(0, 0, 0, 0.6), /* Deep black shadow */
+    0px 0px 25px rgba(255, 223, 0, 0.8), /* Golden glow */
+    inset 0px 0px 15px rgba(255, 255, 255, 0.5); /* Inner highlight */
+
+    /* background-color: rgba(0, 110, 255, 0.329); */  
     /* clip-path: polygon(0% 15%, 10% 11%, 15% 0%, 85% 0%, 89% 10%, 100% 15%, 100% 78%, 79% 83%, 35% 100%, 66% 100%, 17% 83%, 0 78%); */
 
     &>.mb-3 {

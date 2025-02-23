@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.main-container{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(162, 183, 230);
+}
+
+header{
+    height: 10%;
+    width: 100%;
+    border: 1px solid BLUE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+main{
+    height: 90%;
+    width: 100%;
+    border: 1px solid gold;
+}

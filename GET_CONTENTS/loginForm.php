@@ -1,4 +1,4 @@
-<!-- For Checking Only Can Avoid This, -->
+<!-- For Checking Only, Can Avoid This, -->
 
 <div class="login-part">
         <form id="login-form">
@@ -18,6 +18,3 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     </div>
-
-    <?php
-    echo "sbsr";

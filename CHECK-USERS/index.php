@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
-
     <div class="main-container">
+
         <header>
             <div class="heading"><strong><u>SEARCH FOR</u></strong></div>
             <div class="buttons">
@@ -24,26 +24,30 @@
             <table id="myTable" class="table table-dark table-striped">
                 <thead>
                     <tr>
+                        <th>User Id</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>User Type Id</th>
+                        <th>Inforce</th>
+                        <th>Created At</th>
+                        <th>Update At</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
-                <tbody class="bg-success text-white">
+                <tbody class="text-white">
                     <script>
-                        let selectedUser=null;
+                        let selectedUsers=null;
                         document.querySelectorAll("header .btn").forEach(button => {
                             button.addEventListener("click", function () {
-                                selectedUser = this.value;
-                                
+                                selectedUsers = this.value;
+                                // alert("Button Clicked "+selectedUsers);
                                 $.ajax({
                                     type: 'POST',
                                     url: 'get-info.php',
-                                    data: { user: selectedUser},
+                                    data: { user: selectedUsers},
                                     success: function(response){
-                                        $('table tbody').html(response);
-                                        $('#myTable').DataTable(); // New
+                                        $('table tbody').html("Response Is: "+response);
+                                        $('#myTable').DataTable();
                                     }
                                 });
                             });
@@ -52,12 +56,42 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 
     <script>
+        $(document).on("click", ".delBtn", function(){
+            let userId = this.value;
+            let userName = $(this).data("user-name");
+            if(confirm(`Are you sure? You want to delete:\nID: ${userId}, \nNAME: ${userName}`)) {
+                $.ajax({
+                    type: "GET",
+                    url: "../DELETE-USERS",
+                    data: { userId: userId },
+                    success: function(response) {
+                        alert(response);
+                        getDatasAgain();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("AJAX Error:", error);
+                        alert("Error deleting user.");
+                    }
+                });
+            }
+        });
+        
+        function getDatasAgain() {
+            let store = $('button').filter(function() {
+                return $(this).val() === selectedUsers;
+            });
+            if (store.length > 0) {
+                store.trigger("click");
+            }
+        }
+
         $(document).ready(function(){
             $("#myInput").on("keyup", function() {
                 var value = $(this).val().toLowerCase();
@@ -68,4 +102,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
