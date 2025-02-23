@@ -13,7 +13,7 @@
     
     <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
-            <div class="home col-10">HOME</div>
+            <div class="home col-10"><strong>HOME</strong></div>
             <div class="login col-1 "><button onclick="openLoginPart()" class="btn btn-success">Login</a></button></div>
         </div>
     </nav>

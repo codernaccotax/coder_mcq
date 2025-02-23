@@ -53,10 +53,10 @@
                         user_type_id: userTypeId,
                         name: name,
                         email: email,
-                        password: password
+                        user_password: password
                     },
                     success: function(response){
-                        alert("ok");
+                        alert(response);
                     }
                 });
             });

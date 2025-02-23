@@ -58,7 +58,30 @@ try {
   </div>
 </nav>
 
-<div class="main">Main_Part</div>
+<div class="main">
+  <div class="welcome-container">
+        <h1>Welcome, Respectable INSTRUCTOR!</h1>
+        <p>
+            Your role is vital in shaping the minds that navigate this system. As a mentor and guide, you empower users with the knowledge they need to succeed.
+        </p>
+        <p>
+            Your dedication transforms challenges into learning opportunities. With every lesson you impart, you bridge gaps, simplify complexities, and create a path for growth.
+        </p>
+        <p>
+            Every explanation, every demonstration, and every moment you spend teaching adds value to this digital ecosystem. You hold the power to inspire curiosity, instill confidence, and foster expertise.
+        </p>
+        <p>
+            Let’s make today more than just another session—let’s turn it into a milestone in our journey of learning and progress. With clarity, patience, and innovation, let’s build a smarter tomorrow.
+        </p>
+        <p>
+            Thank you for being the cornerstone of knowledge in our system. Your efforts shape the future of those who rely on your wisdom.
+        </p>
+        <p>
+            Welcome, once again, to the heart of learning and excellence.
+        </p>
+  </div>
+
+</div>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>

@@ -1,13 +1,64 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #0066ff9d; */
+}
+
+.main-container {
     height: 100%;
     width: 100%;
-    background-color: black;
-    color: yellow;
+    position: relative;
 }
-.main-container{
-    
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    background-position: center;
+}
+
+.input-section {
+    border: 1px solid gold;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-part {
+    height: 95%;
+    width: 95%;
+    /* background-color: rgba(53, 46, 46, 0.479); */
+    background-color: rgba(26, 83, 238, 0.479);
+    box-shadow: 
+        5px 5px 15px rgba(0, 102, 255, 0.6),  
+        -5px -5px 15px rgba(0, 153, 255, 0.6),  
+        5px -5px 15px rgba(0, 204, 255, 0.6),  
+        -5px 5px 15px rgba(0, 255, 255, 0.6);
+    transition: all 0.5s ease-in-out;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-part:hover {
+    box-shadow: 
+        10px 10px 25px rgba(0, 102, 255, 0.8),  
+        -10px -10px 25px rgba(0, 153, 255, 0.8),  
+        10px -10px 25px rgba(0, 204, 255, 0.8),  
+        -10px 10px 25px rgba(0, 255, 255, 0.8);
 }

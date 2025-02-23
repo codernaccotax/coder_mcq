@@ -63,7 +63,7 @@ try {
 </nav>
 
 <div class="main">
-<div class="welcome-container">
+  <div class="welcome-container">
         <h1>Welcome, Esteemed ADMIN!</h1>
         <p>
             Your journey begins here. As the guardian of this digital realm, you hold the keys to control, manage, and ensure the smooth operation of our entire system.
@@ -83,7 +83,7 @@ try {
         <p>
             Welcome, once again, to the heart of our operations.
         </p>
-    </div>
+  </div>
 </div>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>

@@ -18,47 +18,49 @@
                 <button class="btn btn-outline-danger" value="3"><strong>Students</strong></button>
             </div>
         </header>
+        
         <div class="show-users">
-            <input type="text" id="myInput" placeholder="Search..." class="form-control mb-3">
+            <div class="search-sections"><input type="text" id="myInput" placeholder="Search..." class="form-control mb-3"></div>
 
-            <table id="myTable" class="table table-dark table-striped">
-                <thead>
-                    <tr>
-                        <th>User Id</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>User Type Id</th>
-                        <th>Inforce</th>
-                        <th>Created At</th>
-                        <th>Update At</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody class="text-white">
-                    <script>
-                        let selectedUsers=null;
-                        document.querySelectorAll("header .btn").forEach(button => {
-                            button.addEventListener("click", function () {
-                                selectedUsers = this.value;
-                                // alert("Button Clicked "+selectedUsers);
-                                $.ajax({
-                                    type: 'POST',
-                                    url: 'get-info.php',
-                                    data: { user: selectedUsers},
-                                    success: function(response){
-                                        $('table tbody').html("Response Is: "+response);
-                                        $('#myTable').DataTable();
-                                    }
+            <div class="table-section">
+                <table id="myTable" class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>User Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>User Type Id</th>
+                            <th>Inforce</th>
+                            <th>Created At</th>
+                            <th>Update At</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-white">
+                        <script>
+                            let selectedUsers=null;
+                            document.querySelectorAll("header .btn").forEach(button => {
+                                button.addEventListener("click", function () {
+                                    selectedUsers = this.value;
+                                    // alert("Button Clicked "+selectedUsers);
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'get-info.php',
+                                        data: { user: selectedUsers},
+                                        success: function(response){
+                                            $('table tbody').html("Response Is: "+response);
+                                            $('#myTable').DataTable();
+                                        }
+                                    });
                                 });
                             });
-                        });
-                    </script>
-                </tbody>
-            </table>
+                        </script>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </div>
-
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 

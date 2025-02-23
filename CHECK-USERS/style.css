@@ -17,7 +17,7 @@ body {
 }
 
 .main-container {
-    height: 95%;  /* Use vh instead of % */
+    height: 95%;
     width: 95%;
     background-color: rgba(0, 38, 255, 0.336);
 }
@@ -29,7 +29,6 @@ header{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* border: 1px solid rgb(0, 89, 255); */
 }
 
 header>.heaging{
@@ -42,7 +41,6 @@ header>.buttons{
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 
 .show-users{
@@ -53,7 +51,17 @@ header>.buttons{
     justify-content: start;
     flex-direction: column;
     padding: .5%;
-    /* border: 1px solid rgb(255, 251, 0); */
+}
+
+.search-sections{
+    height: 5%;
+    width: 50%;
+}
+.table-section{
+    margin-top: 1%;
+    height: 94%;
+    width: 100%;
+    overflow: scroll;
 }
 
 .show-users>#myInput{
