@@ -12,6 +12,42 @@ body{
     background-color: rgba(19, 93, 190, 0.199);
 }
 
+.toast-container{
+    /* background-color: red !important; */
+    width: 100% !important;
+    position: relative;
+    top: 5%;
+    height: 10%;
+}
+
+#liveToast{
+    width: 100% !important;
+    background-color: GOLD;
+    transition: .2s ease;
+}
+
+.navbar .container-fluid{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-part{
+    /* background-color: blue; */
+}
+
+.right-part{
+    width: 20%;
+    /* background-color: gold; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.notification{
+    background-color: green;
+}
+
 /*This Puts The Navbar's-Icon In Center*/
 /* .navbar-toggler {
     margin: auto;

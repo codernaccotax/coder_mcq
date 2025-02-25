@@ -24,7 +24,7 @@
 
             <div class="table-section">
                 <table id="myTable" class="table table-dark table-striped">
-                    <thead>
+                    <thead class="position-sticky">
                         <tr>
                             <th>User Id</th>
                             <th>Name</th>

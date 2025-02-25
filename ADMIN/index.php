@@ -47,7 +47,7 @@ try {
             <a class="nav-link active" aria-current="page" href="../ADD-USERS">Add Users</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../INSERT_QUESTIONS">Insert Questions</a>
+            <a class="nav-link active" aria-current="page" href="../INSERT-QUESTIONS">Insert Questions</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" aria-current="page"><i>Coming_Soon_More_Features..</i></a>

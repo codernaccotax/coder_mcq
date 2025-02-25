@@ -1,6 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+
+    ::selection{
+        background-color: rgba(14, 114, 30, 0.685);
+        color: rgb(255, 255, 255);
+    }
 }
 
 body {
@@ -21,6 +26,12 @@ body {
 }
 
 .navbar .container-fluid .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid  red; */
+    height: auto;
+    width: auto;
     cursor: pointer;
 }
 

@@ -9,7 +9,7 @@ try {
 
     foreach ($records as $record) {
         $x = "<tr>";
-        $x .= "<td>ID: " . $record['id'] . "</td>";
+        $x .= "<td>" . $record['id'] . "</td>";
         $x .= "<td>" . $record['name'] . "</td>";
         $x .= "<td>" . $record['email'] . "</td>";
         $x .= "<td>" . $record['user_type_id'] . "</td>";

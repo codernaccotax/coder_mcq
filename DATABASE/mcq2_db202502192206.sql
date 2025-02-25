@@ -186,7 +186,7 @@ INSERT INTO `user_types` (`id`, `user_type_name`, `inforce`, `created_at`, `upda
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) unsigned NOT NULL,
   `user_type_id` bigint(20) unsigned DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
@@ -198,8 +198,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `unique_user_type_name` (`email`),
   KEY `user_type_id` (`user_type_id`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_type_id`) REFERENCES `user_types` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+);
 
 /*!40101 SET character_set_client = @saved_cs_client */;
 

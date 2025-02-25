@@ -9,6 +9,12 @@ html, body {
     width: 100%;
 }
 
+thead.position-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
 body {
     display: flex;
     align-items: center;

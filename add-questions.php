@@ -7,7 +7,6 @@ $topic = $stmt->fetch(PDO::FETCH_ASSOC);
 print_r($topic);
 
 
-
 ?>
 
 <!doctype html>

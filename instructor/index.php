@@ -15,8 +15,8 @@ try {
         } else {
             echo "userId not received.";
         }
-
-        ?>
+        print_r($_POST);
+?>
 
 <!doctype html>
 <html lang="en">
@@ -43,7 +43,7 @@ try {
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../INSERT_QUESTIONS">Insert Questions</a>
+            <a class="nav-link active" aria-current="page" href="../INSERT-QUESTIONS">Insert Questions</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" aria-current="page" href="#"><i>Coming_Soon_More_Features..</i></a>
