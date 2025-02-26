@@ -12,9 +12,9 @@ try {
       } else {
       echo "Invalid userId provided.";
       }
-  } else {
-  echo "userId not received.";
-  }
+    } else {
+      echo "userId not received.";
+    }
 ?>
 
 <!doctype html>
@@ -25,13 +25,13 @@ try {
     <title>STUDENT</title>
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-
   </head>
+  
   <body>
 <nav class="navbar">
   <div class="container-fluid">
     <div class="left-part">
-      <a class="navbar-brand">WELCOME <strong>STUDENT</strong></a>
+      <a class="navbar-brand">WELCOME <strong><?php echo $name; ?></strong></a>
     </div>
 
     <div class="right-part">
@@ -49,7 +49,7 @@ try {
 
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><?php echo $name; ?></h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">STUDENT</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -76,9 +76,7 @@ try {
 <div class="main"></div>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-   
-    
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>   
 
 <!-- Notification-Section -->
 <button type="button" class="btn btn-primary visually-hidden" id="liveToastBtn">Show live toast</button>

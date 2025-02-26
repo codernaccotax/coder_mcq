@@ -15,7 +15,7 @@ try {
         } else {
             echo "userId not received.";
         }
-        print_r($_POST);
+        // print_r($_POST);
 ?>
 
 <!doctype html>
@@ -31,13 +31,13 @@ try {
   <body>
 <nav class="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand">WELCOME <strong>INSTRUCTOR</strong></a>
+    <a class="navbar-brand">WELCOME <strong><?php echo strtoupper($name)?></strong></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><?php echo strtoupper($name)?></h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">INSTRUCTOR</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
