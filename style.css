@@ -68,11 +68,30 @@ img {
     width: 100%;
     object-fit: contain;
     background-position: center;
+    /* background-color: red; */
 }
 
-main .content{
+.image-section {
+    height: auto;
+    animation: rotate 5s linear infinite;
+    width: auto;
+    background-color: gold;
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+main .content {
     z-index: 5;
     height: 100%;
     width: 100%;
-    background-color: red;
+    /* background-color: red; */
 }

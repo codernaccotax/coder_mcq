@@ -28,9 +28,11 @@
       </nav>
 
       <main>
-        <img src=".\images\codernaccotax.png" alt="">
-        <div class="content"></div>
+        <div class="image-section">
+          <img src=".\images\codernaccotax.png" alt="">
+        </div>
       </main>
+      <div class="content"></div>
 
     </div>
 
