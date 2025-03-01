@@ -51,7 +51,7 @@
                         <div class="form-part">
                             <label class="text-white col-12 input-fileds" for="user-password">PASSWORD</label>
 
-                            <input type="password" id="user-password" placeholder=".......">
+                            <input type="password" id="user-password" placeholder="pas....rd">
                         </div>
                         <div class="form-part form-button">
                             <button type="submit" class="btn text-success w-100 h-100">LOGIN</button>
