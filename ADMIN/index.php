@@ -28,7 +28,7 @@ try {
 
 </head>
 <body>
-    
+
 <nav class="navbar">
   <div class="container-fluid">
     <span class="navbar-brand">WELCOME <strong><?php echo strtoupper($name)?></strong></span>
@@ -73,7 +73,13 @@ try {
     </header>
 
     <div class="admin-info">
-        <header><span>X</span></header>
+        <header class="p-0"><span class="m-0 text-danger">X</span></header>
+        <main class="admin-info-content">
+    <h1>Welcome ADMIN</h1>
+    <p>Nice to see you here in your workplace.</p>
+        Here your responsibilities begins. Please check everything time to time. For maintaining software, it is crucial to maintain each thing. Even one issue may cause a bad user experience. So, please make sure that you are working well.
+</main>
+
     </div>
 
     <section id="about" class="py-5 bg-light">
@@ -88,34 +94,13 @@ try {
         <div class="container">
             <div class="row">
                 <div class="col-md-4 service service-1">
-                    <!-- <div class="card h-100"> -->
-                        <!-- <div class="h-100 w-100 card-body"> -->
-                            <!-- <h5>Web Development</h5>
-                            <p>             -->
-                                <button class=" h-100 w-100 btn btn-success btn-outline-dark btn-lg mt-3 ms-3 text-white">Check Users</button>
-                            <!-- </p> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
+                    <button class="service-btn btn btn-success btn-outline-dark btn-lg text-white">Check Users</button>
                 </div>
                 <div class="col-md-4 service service-2">
-                    <!-- <div class="card h-100"> -->
-                        <!-- <div class="h-100 w-100 card-body"> -->
-                            <!-- <h5>App Development</h5>
-                            <p>             -->
-                                <button class=" h-100 w-100 btn btn-success btn-outline-dark btn-lg mt-3 ms-3 text-white">Add Users</button>
-                            <!-- </p> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
+                    <button class="service-btn btn btn-success btn-outline-dark btn-lg text-white">Add Users</button>
                 </div>
                 <div class="col-md-4 service service-3">
-                    <!-- <div class="card h-100"> -->
-                        <!-- <div class="h-100 w-100 card-body"> -->
-                            <!-- <h5>Cloud Solutions</h5>
-                            <p> -->
-                                <button class=" h-100 w-100 btn btn-success btn-outline-dark btn-lg mt-3 ms-3 text-white">Insert Questions</button>
-                            <!-- </p> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
+                    <button class="service-btn btn btn-success btn-outline-dark btn-lg text-white">Insert Questions</button>
                 </div>
             </div>
         </div>
