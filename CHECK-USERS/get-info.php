@@ -16,7 +16,7 @@ try {
         $x .= "<td>" . $record['inforce'] . "</td>";
         $x .= "<td>" . $record['created_at'] . "</td>";
         $x .= "<td>" . $record['updated_at'] . "</td>";
-        $x .= "<td><button class='bg-danger text-warning delBtn' type='submit' name='del' value='" . $record['id'] . "' data-user-name='".$record['name']."'>DELETE</button></td>";
+        $x .= "<td><button class='btn btn-outline-danger text-warning delBtn' type='submit' name='del' value='" . $record['id'] . "' data-user-name='".$record['name']."'><strong>DELETE</strong></button></td>";
         $x .= "</tr>";
         echo $x;
     }

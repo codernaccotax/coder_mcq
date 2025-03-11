@@ -73,12 +73,12 @@ try {
     </header>
 
     <div class="admin-info">
-        <header class="p-0"><span class="m-0 text-danger">X</span></header>
+        <header class="p-0"><span class="m-0 text-danger"><strong>X</strong></span></header>
         <main class="admin-info-content">
-    <h1>Welcome ADMIN</h1>
-    <p>Nice to see you here in your workplace.</p>
-        Here your responsibilities begins. Please check everything time to time. For maintaining software, it is crucial to maintain each thing. Even one issue may cause a bad user experience. So, please make sure that you are working well.
-</main>
+            <h1>Welcome ADMIN</h1>
+            <p>Nice to see you here in your workplace.</p>
+                Here your responsibilities begins. Please check everything time to time. For maintaining software, it is crucial to maintain each thing. Even one issue may cause a bad user experience. So, please make sure that you are working well.
+        </main>
 
     </div>
 
@@ -109,7 +109,8 @@ try {
     <section id="contact" class="py-5 bg-light">
         <div class="container">
             <h2>Contact Us</h2>
-            <p><a href="https://github.com/codernaccotax/coder_mcq" target="_blank">HERE</a></p>
+            <!-- <p><a href="https://github.com/codernaccotax/coder_mcq" target="_blank">HERE</a></p> -->
+            <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfc-ugUpay54upPAxrbnddDbeeW8ggBdKMTAnwiv-44_9QzTQ/viewform?usp=header" target="_blank">HERE</a></p>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
