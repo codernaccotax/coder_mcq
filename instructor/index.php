@@ -1,37 +1,40 @@
 <?php
 
 try {
-    require_once "../config.php";
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST['userId'])) {
-            $userId = $_POST['userId'];
-            if ($userId !== false) {
-                $stmt = $pdo->prepare('SELECT name FROM users WHERE id = ?;');
-                $stmt->execute([$userId]);
-                $name = $stmt->fetchColumn();
-            } else {
-                echo "Invalid userId provided.";
-            }
-        } else {
-            echo "userId not received.";
-        }
-        // print_r($_POST);
+  require_once "../config.php";
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['userId'])) {
+      $userId = $_POST['userId'];
+      if ($userId !== false) {
+        $stmt = $pdo->prepare('SELECT name FROM users WHERE id = ?;');
+        $stmt->execute([$userId]);
+        $name = $stmt->fetchColumn();
+      } else {
+        echo "Invalid userId provided.";
+      }
+    } else {
+      echo "userId not received.";
+    }
+    // print_r($_POST);
 ?>
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>INSTRUCTOR</title>
-    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <!doctype html>
+    <html lang="en">
 
-  </head>
-  <body>
-<nav class="navbar">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>INSTRUCTOR</title>
+      <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+      <!-- <link rel="stylesheet" href="style.css"> -->
+      <link rel="stylesheet" href="style2.css">
+
+    </head>
+
+    <body>
+      <!-- <nav class="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand">WELCOME <strong><?php echo strtoupper($name)?></strong></a>
+    <a class="navbar-brand">WELCOME <strong><?php echo strtoupper($name) ?></strong></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,7 +60,6 @@ try {
     </div>
   </div>
 </nav>
-
 <div class="main">
   <div class="welcome-container">
         <h1>Welcome, Respectable INSTRUCTOR!</h1>
@@ -81,19 +83,52 @@ try {
         </p>
   </div>
 
-</div>
+</div> -->
 
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-   
-  </body>
-</html>
+      <div class="main-container">
+        <img src="../images/space.jpg" alt="">
+        <div class="content">
+          <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+              <a class="navbar-brand  text-white" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <span class="nav-link active home text-white" aria-current="page" href="../index.php">Home</span>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  text-white" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  text-white" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+      <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+      <script>
+        $('.home').on("click", function() {
+          window.location.href = "../index.php";
+        });
+      </script>
+
+    </body>
+
+    </html>
 
 <?php
-    } else {
-        echo "This script only handles POST requests.";
-    }
+  } else {
+    echo "This script only handles POST requests.";
+  }
 } catch (PDOException $e) {
-    echo 'Error: ' . $e->getMessage();
+  echo 'Error: ' . $e->getMessage();
 }
 ?>
